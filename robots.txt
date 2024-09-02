@@ -1,0 +1,14 @@
+# robots.txt for javmomma
+
+# Allow all user agents
+User-agent: *
+
+# Disallow crawling of certain directories (if needed)
+Disallow: /private/  # Example, adjust as per your site structure
+Disallow: /admin/    # Example, adjust as per your site structure
+
+# Allow all other content to be crawled
+Allow: /
+
+# Sitemap URL
+Sitemap: https://javmomma.vercel.app/sitemap.xml

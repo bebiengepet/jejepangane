@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavMomma - Free Jav HD Video Streaming , Jav Uncensored & Jav Censored</title>
+
+    <meta name="google-site-verification" content="q6U3g-4aFgr17nnEJ8iN_kg5sIEEELQuE20ZjL_pYZA" />
+
+    <meta name="yandex-verification" content="1554b68e9adcd24c" />
+
+    <link rel="icon" href="logo.png" type="image/png"> <!-- Default favicon -->
+ 
+       <meta name="description" content="Watch free Jav videos streaming online. Streaming uncensored and censored Japanese adult content in high quality. Explore a vast collection of Jav movies now.">
+    <!-- Import Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Import jQuery and Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/censored.js"></script>
+    <script src="js/uncen.js"></script>
+    <script src="js/chinese.js"></script>
+</head>
+<body>
+
+    <!-- Side Navigation for Mobile -->
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="container">
+                <h4 class="black-text bold-text"><a href="index.html" class="brand-logo">JavMomma</a></h4>
+            </div>
+        </li>
+        <li>
+            <div class="container">
+                <div class="input-field">
+                <input id="mobile-search-input"
+                type="text" placeholder="Search...">
+                <label for="search"><i class="material-icons">search</i></label>
+                <button class="btn waves-effect waves-light pink"
+                    id="mobile-search-button"
+                    >Search video</button>
+            </div>
+            </div>
+        </li>
+        <li>
+            <div class="container">
+                <h5 class="bold-text">Choose Genre video</h5>
+            </div>
+        </li>
+        <li><a href="/genre/censored.html">Censored</a></li>
+        <li><a href="/genre/uncensored.html">Uncensored</a></li>
+        <li><a href="/genre/chinese.html">Chinese</a></li>
+    </ul>
+
+    <!-- Main Navigation -->
+    <nav>
+        <div class="nav-wrapper pink">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <!-- Logo -->
+                <a href="index.html" class="bold-text brand-logo" style="flex: 1;">JavMomma</a>
+
+                <!-- Dropdown Menu in the Center -->
+                <ul id="nav-mobile" class="center hide-on-med-and-down" style="flex: 2; display: flex; justify-content: center;">
+                    <li><a href="/genre/censored.html">Censored</a></li>
+                    <li><a href="/genre/uncensored.html">Uncensored</a></li>
+                    <li><a href="/genre/chinese.html">Chinese</a></li>
+                </ul>
+
+                <!-- Search Input and Button on the Right -->
+                <div class="hide-on-small-only" style="flex: 1; display: flex; justify-content: flex-end; align-items: center;">
+                    <input type="text" 
+                    id="search-input"
+                    placeholder="Search Videos..." style="
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 3px;color: black;
+                    margin-right: 10px; width: 200px;">
+                    <button class="btn waves-effect waves-light white black-text"
+                    id="search-button"
+                    >Search</button>
+                </div>
+
+                <!-- Mobile Menu Trigger -->
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="row">
+        <div class="col s12 m10 l10">
+            <div class="black leftbar white-text"
+            style="padding: 2px;margin-top: 10px" 
+            >
+                <h6 class="bold-text">New Uploaded videos Today</h6>
+            </div>
+
+            <div id="card-container" class="row"
+            limit="35"
+                >
+            <div style="display: flex;justify-content: center">
+        <div class="preloader-wrapper active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+
+            </div>
+                </div>
+
+        <div class="black leftbar white-text"
+            style="padding: 2px;margin-top: 10px">
+            <h6 class="bold-text">Censored Videos</h6>
+        </div>
+
+        <div id="censored-container" class="row" limit="34"></div>
+
+        <div class="black leftbar white-text"
+            style="padding: 2px;margin-top: 10px">
+            <h6 class="bold-text">Uncensored Videos</h6>
+        </div>
+
+        <div id="uncen-container" class="row" limit="10"></div>
+
+        <div class="black leftbar white-text"
+            style="padding: 2px;margin-top: 10px">
+            <h6 class="bold-text">
+            Chinese Av</h6>
+        </div>
+
+        <div id="chinese-container" class="row" limit="25"></div>
+
+        </div>
+         <div class="col s12 m2 l2">
+            <div class="black leftbar white-text" style="padding: 2px;margin-top: 10px">
+                <h6 class="bold-text">Categories</h6>
+            </div>
+                
+            <ul 
+            style="background-color: #f5c9dd;"
+            class="listgenre">
+                    <li><a href="/genre/censored.html">Censored videos</a></li>
+                    <li><a href="/genre/uncensored.html">Uncensored videos</a></li>
+                    <li><a href="/genre/chinese.html">Chinese videos</a></li>
+                </ul>
+
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="black white-text">
+                <p class="center-align">There is no video uploaded on this website. all from other sources. if it feels harmful, please contact the video host concerned</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div>
+           <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4891917,4,3,170,30,00000001']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4891917&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+   <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+
+          $('#mobile-search-button').on('click', function() {
+                const query = $('#mobile-search-input').val();
+                if (query) {
+                    // Redirect to search.html with the query parameter
+                    window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+                }
+            });
+
+
+               $('#search-button').on('click', function() {
+                const query = $('#search-input').val();
+                if (query) {
+                    // Redirect to search.html with the query parameter
+                    window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

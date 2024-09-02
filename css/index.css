@@ -1,0 +1,45 @@
+.bold-text{
+	font-weight: bold;
+}
+
+.listgenre{
+	color: #f71b7e;
+	font-weight: bold;
+	cursor: pointer;
+
+}
+.leftbar{
+	border-left: 15px solid #f05d9f;
+}
+
+.titleselect{
+	color: black;
+}
+
+.titleselect:hover{
+	color:#c96592;
+	cursor: pointer;
+}
+.title-badge{
+	position: absolute;
+	top:2px;
+	left:2px;
+	color: white;
+	background-color: #f71b7e;
+	font-weight: bold;
+	padding: 2px;
+	z-index: 1000;
+}
+.time-badge {
+    position: absolute; /* Position it absolutely within the card-image container */
+    bottom: 3px; /* Distance from the bottom */
+    right: 3px; /* Distance from the right */
+    background-color: black; /* Black background */
+    color: white; /* White text */
+    padding: 2px 6px; /* Padding for a better look */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 12px; /* Font size */
+}
+.card-image {
+    position: relative; /* Position relative to allow absolute positioning of the badge */
+}

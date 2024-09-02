@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavMom - Jav Uncensored Videos Streaming</title>
+
+ <meta name="description" content="JavMom watch Jav UnCensored videos sub English .find Jav Video censored and uncensored">
+
+
+<link rel="icon" href="logo.png" type="image/png"> <!-- Default favicon -->
+
+<!-- Import Materialize CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+<!-- Import jQuery and Materialize JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/index.css">
+<script src="../js/index.js"></script>
+<script src="../js/uncen.js"></script>
+
+</head>
+<body>
+
+ <!-- Side Navigation for Mobile -->
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="container">
+                <h4 class="black-text bold-text"><a href="../index.html" class="brand-logo">JavMom</a></h4>
+            </div>
+        </li>
+        <li>
+            <div class="container">
+                <div class="input-field">
+                <input id="mobile-search-input"
+                type="text" placeholder="Search...">
+                <label for="search"><i class="material-icons">search</i></label>
+                <button class="btn waves-effect waves-light pink"
+                    id="mobile-search-button"
+                    >Search video</button>
+            </div>
+            </div>
+        </li>
+        <li>
+            <div class="container">
+                <h5 class="bold-text">Choose Genre video</h5>
+            </div>
+        </li>
+        <li><a href="/genre/censored.html">Censored</a></li>
+        <li><a href="/genre/uncensored.html">Uncensored</a></li>
+        <li><a href="/genre/chinese.html">Chinese</a></li>
+    </ul>
+
+    <!-- Main Navigation -->
+    <nav>
+        <div class="nav-wrapper pink">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <!-- Logo -->
+                <a href="../index.html" class="bold-text brand-logo" style="flex: 1;">JavMom</a>
+
+                <!-- Dropdown Menu in the Center -->
+                <ul id="nav-mobile" class="center hide-on-med-and-down" style="flex: 2; display: flex; justify-content: center;">
+                    <li><a href="/genre/censored.html">Censored</a></li>
+                    <li><a href="/genre/uncensored.html">Uncensored</a></li>
+                    <li><a href="/genre/chinese.html">Chinese</a></li>
+                </ul>
+
+                <!-- Search Input and Button on the Right -->
+                <div class="hide-on-small-only" style="flex: 1; display: flex; justify-content: flex-end; align-items: center;">
+                    <input type="text" 
+                    id="search-input"
+                    placeholder="Search Videos..." style="
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 3px;color: black;
+                    margin-right: 10px; width: 200px;">
+                    <button class="btn waves-effect waves-light white black-text"
+                    id="search-button"
+                    >Search</button>
+                </div>
+
+                <!-- Mobile Menu Trigger -->
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+    <h5 class="bold-text">Jav Uncensored Videos</h5>
+</div>
+
+<div id="uncen-container" class="row" >
+<div class="preloader-wrapper big active">
+<div class="spinner-layer spinner-blue-only">
+<div class="circle-clipper left">
+<div class="circle"></div>
+</div><div class="gap-patch">
+<div class="circle"></div>
+</div><div class="circle-clipper right">
+<div class="circle"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container" style="margin-bottom: 40px; text-align: center;">
+<button id="previous-button" class="btn waves-effect pink">Previous</button>
+<span id="count"></span>
+<button id="next-button" class="btn waves-effect pink">Next</button>
+</div>
+
+
+<div>
+       <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4891917,4,3,170,30,00000001']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4891917&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</div>
+
+<script>
+
+let currentPage = 1;
+
+$(document).ready(function() {
+    $("#count").text(currentPage)
+// Get the limit from the 'censored-container' element attribute
+const cardContainer = $('#uncen-container');
+const limit = parseInt(cardContainer.attr('limit'), 10) || 0; // Default to 0 if 'limit' is not specified
+const apiUrl = `${cors_any}/${base_domain}/provide/vod?ac=detail&t=2&pg=${currentPage}`;
+
+// Show the preloader before fetching data
+const preloader = cardContainer.find('.preloader-wrapper');
+preloader.show();
+
+// Fetch data from API
+$.ajax({
+url: apiUrl,
+method: 'GET',
+success: function(response) {
+let data = response.list;
+
+// Limit the data if 'limit' is specified
+if (limit > 0) {
+    data = data.slice(0, limit);
+}
+
+// Hide the preloader after data is loaded
+preloader.hide();
+
+// Loop through the data and create cards
+data.forEach(item => {
+    const truncatedTitle = item.name.length > 40 ? item.name.substring(0, 37) + '...' : item.name;
+
+    const card = `
+        <div class="col s12 m3 l3">
+            <div class="card">
+                <div class="card-image">
+                    <span class="title-badge">${item.type_name}</span>
+                    <img src="${item.poster_url}">
+                    <span class="time-badge">${item.time}</span>
+                </div>
+                <div style="padding:2px">
+                    <a href="/p.html?id=${item.id}" class="bold-text titleselect">${truncatedTitle}</a>
+                </div>
+            </div>
+        </div>
+    `;
+    cardContainer.append(card);
+});
+},
+error: function(error) {
+// Hide the preloader in case of an error
+preloader.hide();
+console.error('Error fetching data:', error);
+}
+});
+
+// Add event listeners for pagination buttons
+$('#previous-button').on('click', function() {
+if (currentPage > 1) {
+currentPage--;
+loadData(currentPage);
+    $("#count").text(currentPage)
+
+}
+});
+
+$('#next-button').on('click', function() {
+currentPage++;
+loadData(currentPage);
+    $("#count").text(currentPage)
+
+});
+});
+
+// Function to load data from API
+function loadData(page) {
+const cardContainer = $('#uncen-container');
+const limit = parseInt(cardContainer.attr('limit'), 10) || 0; // Default to 0 if 'limit' is not specified
+const apiUrl = `${cors_any}/${base_domain}/provide/vod?ac=detail&t=2&pg=${page}`;
+
+// Show the preloader before fetching data
+const preloader = cardContainer.find('.preloader-wrapper');
+preloader.show();
+
+// Clear previous data
+cardContainer.empty();
+
+// Fetch data from API
+$.ajax({
+url: apiUrl,
+method: 'GET',
+success: function(response) {
+let data = response.list;
+
+// Limit the data if 'limit' is specified
+if (limit > 0) {
+    data = data.slice(0, limit);
+}
+
+// Hide the preloader after data is loaded
+preloader.hide();
+
+// Loop through the data and create cards
+data.forEach(item => {
+    const truncatedTitle = item.name.length > 40 ? item.name.substring(0, 37) + '...' : item.name;
+
+    const card = `
+        <div class="col s12 m3 l3">
+            <div class="card">
+                <div class="card-image">
+                    <span class="title-badge">${item.type_name}</span>
+                    <img src="${item.poster_url}">
+                    <span class="time-badge">${item.time}</span>
+                </div>
+                <div style="padding:2px">
+                    <a href="/p.html?id=${item.id}" class="bold-text titleselect">${truncatedTitle}</a>
+                </div>
+            </div>
+        </div>
+    `;
+    cardContainer.append(card);
+});
+},
+error: function(error) {
+// Hide the preloader in case of an error
+preloader.hide();
+console.error('Error fetching data:', error);
+}
+});
+}
+</script>
+</body>
+</html>

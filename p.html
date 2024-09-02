@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="icon" href="logo.png" type="image/png"> <!-- Default favicon -->
+ 
+
+    <!-- Import Materialize CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/index.js"></script>
+    <script src="/js/detail/getvideo.js"></script>
+    <script src="/js/detail/siderandom.js"></script>
+    <script src="/js/detail/relatedvideos.js"></script>
+
+      <style>
+        /* Default iframe height for desktop */
+        iframe {
+            height: 500px;
+            width: 100%;
+        }
+
+        /* Adjust iframe height for mobile devices */
+        @media (max-width: 600px) {
+            iframe {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Side Navigation for Mobile -->
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="container">
+                <h4 class="black-text bold-text"><a href="index.html" class="brand-logo">JavMom</a></h4>
+            </div>
+        </li>
+        <li>
+            <div class="container">
+                <div class="input-field">
+                <input id="mobile-search-input"
+                type="text" placeholder="Search...">
+                <label for="search"><i class="material-icons">search</i></label>
+                <button class="btn waves-effect waves-light pink"
+                    id="mobile-search-button"
+                    >Search video</button>
+            </div>
+            </div>
+        </li>
+        <li>
+            <div class="container">
+                <h5 class="bold-text">Choose Genre video</h5>
+            </div>
+        </li>
+        <li><a href="/genre/censored.html">Censored</a></li>
+        <li><a href="/genre/uncensored.html">Uncensored</a></li>
+        <li><a href="/genre/chinese.html">Chinese</a></li>
+    </ul>
+
+    <!-- Main Navigation -->
+    <nav>
+        <div class="nav-wrapper pink">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <!-- Logo -->
+                <a href="index.html" class="bold-text brand-logo" style="flex: 1;">JavMom</a>
+
+                <!-- Dropdown Menu in the Center -->
+                <ul id="nav-mobile" class="center hide-on-med-and-down" style="flex: 2; display: flex; justify-content: center;">
+                    <li><a href="/genre/censored.html">Censored</a></li>
+                    <li><a href="/genre/uncensored.html">Uncensored</a></li>
+                    <li><a href="/genre/chinese.html">Chinese</a></li>
+                </ul>
+
+                <!-- Search Input and Button on the Right -->
+                <div class="hide-on-small-only" style="flex: 1; display: flex; justify-content: flex-end; align-items: center;">
+                    <input type="text" 
+                    id="search-input"
+                    placeholder="Search Videos..." style="
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 3px;color: black;
+                    margin-right: 10px; width: 200px;">
+                    <button class="btn waves-effect waves-light white black-text"
+                    id="search-button"
+                    >Search</button>
+                </div>
+
+                <!-- Mobile Menu Trigger -->
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="row" style="margin-top: 20px">
+        <div class="col s12 m8 l8">
+            <div id="video-container"></div>
+            <div id="info-container"></div>
+        </div>
+
+        <div class="col s12 m4 l4">
+            <div class="black leftbar white-text" style="padding: 2px; margin-top: 10px">
+                <h6 class="bold-text">Popular Videos</h6>
+            </div>
+            <div id="random-container" class="row" limit="6"></div>
+        </div>
+    </div>
+
+    <!-- Related Videos Section -->
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="black leftbar white-text" style="padding: 2px; margin-top: 10px">
+                <h6 class="bold-text">Related Videos</h6>
+            </div>
+            <div id="relatedrandom-container" class="row" limit="40"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="pink black-text" style="padding: 1px; text-align: center">
+                <h3 class="white-text">JavMom</h3>
+                <p class="white-text">free Jav Video Streaming</p>
+            </div>
+            <div class="black white-text">
+                <p>There is no video uploaded on this website. all from other sources. if it feels harmful, please contact the video host concerned</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+
+          $('#mobile-search-button').on('click', function() {
+                const query = $('#mobile-search-input').val();
+                if (query) {
+                    // Redirect to search.html with the query parameter
+                    window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+                }
+            });
+
+
+               $('#search-button').on('click', function() {
+                const query = $('#search-input').val();
+                if (query) {
+                    // Redirect to search.html with the query parameter
+                    window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
